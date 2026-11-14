@@ -2180,6 +2180,57 @@ gap: 12px;
     height: 20px;
   }
 }
+
+  /* =====================================
+   ANIMACE PŘI SCROLLOVÁNÍ
+===================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity .75s ease,
+    transform .75s cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.reveal-left {
+  transform: translateX(-35px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(35px);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* MOBIL – jemnější pohyb */
+@media (max-width: 760px) {
+  .reveal,
+  .reveal.reveal-left,
+  .reveal.reveal-right {
+    transform: translateY(18px);
+  }
+
+  .reveal.visible {
+    transform: translate(0, 0);
+  }
+}
+
+/* Respektování nastavení omezeného pohybu */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.reveal-left,
+  .reveal.reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+  
 </style>
 </head>
 <body>
@@ -3240,6 +3291,62 @@ document.addEventListener('keydown', event => {
 document.querySelectorAll('.modal-btn').forEach(button => {
   button.addEventListener('click', closeModal);
 });
+
+  /* =====================================
+   ANIMACE PŘI SCROLLOVÁNÍ
+===================================== */
+
+const revealItems = [
+  ['.hero-content', ''],
+  ['.services h2', ''],
+  ['.service-card', ''],
+  ['.about-photo', 'reveal-left'],
+  ['.about-content', 'reveal-right'],
+  ['.vouchers-photo', 'reveal-left'],
+  ['.vouchers-content', 'reveal-right'],
+  ['.contact h2', ''],
+  ['.contact-place', ''],
+  ['.contact-details', ''],
+  ['.contact-hours', '']
+];
+
+if ('IntersectionObserver' in window) {
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -25px 0px'
+  });
+
+  revealItems.forEach(([selector, direction]) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add('reveal');
+
+      if (direction) {
+        element.classList.add(direction);
+      }
+
+      if (
+        selector === '.service-card' ||
+        selector === '.contact-place'
+      ) {
+        element.style.setProperty(
+          '--reveal-delay',
+          `${index * 120}ms`
+        );
+      }
+
+      observer.observe(element);
+    });
+  });
+
+}
 </script>
 
 </body>
