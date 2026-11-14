@@ -158,6 +158,9 @@
 }
 
 /* O MNĚ */
+.about-photo-mobile {
+  display: none;
+}
 
 .about {
   position: relative;
@@ -1415,17 +1418,23 @@ a.contact-place:hover p {
   }
 
   .about-photo {
-    order: 2;
-    width: 100%;
-    height: 380px;
-    margin-top: 0;
-  }
+  display: none;
+}
 
-  .about-photo img {
-    clip-path: none;
-    border-radius: 120px 120px 0 0;
-    object-position: center 20%;
-  }
+  .about-photo-mobile {
+  display: block;
+  width: 260px;
+  max-width: 100%;
+  margin: 0 auto 25px;
+}
+
+.about-photo-mobile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  clip-path: none;
+}
 
   .about-photo-outline {
     display: none;
@@ -1455,10 +1464,6 @@ a.contact-place:hover p {
   .about p {
     font-size: 13px;
     line-height: 1.55;
-  }
-
-  .about-photo {
-    height: 330px;
   }
 
   .about-signature {
@@ -2593,6 +2598,12 @@ a.contact-place:hover p {
       <div class="about-content">
 
         <h2>O mně</h2>
+
+        <!-- MOBILNÍ FOTOGRAFIE -->
+<div class="about-photo-mobile">
+  <img src="petra-kotyzova.jpeg"
+       alt="Petra Voják Kotýzová">
+</div>
 
         <p>Srdečně Vás vítám! Jmenuji se Petra Voják Kotýzová a věřím, že každá žena si zaslouží cítit se krásná, sebevědomá a sama sebou.</p>
 
