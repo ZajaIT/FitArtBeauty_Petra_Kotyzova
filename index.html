@@ -1424,14 +1424,18 @@ a.contact-place:hover p {
   .about-photo-mobile {
   display: block;
   width: 260px;
+  height: 290px;
   max-width: 100%;
   margin: 0 auto 25px;
+  overflow: hidden;
 }
 
 .about-photo-mobile img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
   border-radius: 0;
   clip-path: none;
 }
