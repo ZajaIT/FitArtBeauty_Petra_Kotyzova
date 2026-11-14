@@ -1,0 +1,3242 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fit Art Beauty Petra | Kosmetika a vizážistika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3c2118;--brown:#743a1c;--cream:#f7eae1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:'DM Sans',Arial,sans-serif}a{text-decoration:none;color:inherit}
+
+/* PC — NAVIGACE */
+
+.site-header{
+  height:86px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,252,249,.97);
+  overflow:visible;
+}
+
+.nav-inner{height:100%;max-width:1240px;margin:auto;padding:0 6.3%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0;
+  position:relative;
+  z-index:10;
+}
+
+.brand-logo {
+  display: block;
+  width: 220px;
+  height: auto;
+  transform: translateY(13px);
+}
+
+.brand-mark{width:76px;height:75px;overflow:hidden;display:flex;align-items:center;justify-content:center;mix-blend-mode:multiply}
+.brand-mark img{width:164px;max-width:none;height:auto;flex-shrink:0}
+.brand-words{display:flex;flex-direction:column;line-height:1}
+.brand-name{font-family:'Playfair Display',Georgia,serif;font-size:39px;letter-spacing:-1.8px;white-space:nowrap}
+.brand-sub{font-size:11px;font-weight:700;letter-spacing:3.3px;margin:5px 0 0 3px;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:31px;margin-left:auto;white-space:nowrap;font-size:15px;font-weight:600;color:#17110e}
+.nav-links a{position:relative;padding:9px 0}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--brown);
+  transition: width .3s ease, left .3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a.active{color:var(--brown)}.nav-links a.active:after{content:'';position:absolute;bottom:2px;left:0;width:100%;height:1px;background:var(--brown)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:13px;background:linear-gradient(180deg,#a76b43 0%,#7b411f 48%,#49230f 100%);border:1px solid #744023;color:white;border-radius:50px;box-shadow:inset 0 1px rgba(255,255,255,.25);font-weight:600}
+
+.btn {
+  transition: transform .3s ease,
+              box-shadow .3s ease,
+              filter .3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+  box-shadow: 0 7px 18px rgba(73,35,15,.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.nav-btn{font-size:14px;padding:11px 19px;white-space:nowrap}
+.nav-btn svg{width:21px;height:21px}
+.header-wave{position:absolute;left:0;top:calc(100% - 1px);width:100%;height:33px;z-index:2;pointer-events:none;fill:rgba(255,252,249,.97)}
+.menu-toggle{display:none}
+
+/* PC — HERO */
+
+.hero {
+  height: 500px;
+  position: relative;
+  isolation: isolate;
+  background-color: rgba(255,252,249,.97);
+  background-image:
+    linear-gradient(90deg,
+  rgba(255,245,238,.82) 0%,
+  rgba(255,245,238,.55) 15%,
+  rgba(255,245,238,.15) 40%,
+  rgba(255,245,238,0) 52%
+),
+    url('hero.webp');
+  background-size: 90% 100%, 90% auto;
+  background-repeat: no-repeat;
+  background-position: center, center 9%;
+  overflow: hidden;
+}
+
+.hero-content{position:relative;z-index:2;width:min(100%,1240px);height:100%;margin:0 auto;padding:41px 7.1% 23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.eyebrow{font-size:15px;letter-spacing:3px;font-weight:500;margin:0 0 13px 0;white-space:nowrap}
+.hero h1{font:italic 400 clamp(44px,5.3vw,66px)/.99 'Playfair Display',Georgia,serif;letter-spacing:-2.1px;margin:0 0 30px;max-width:570px}
+.hero-desc{font-size:16px;line-height:1.27;max-width:420px;margin:0 0 25px;color:#18110e}
+.hero-btn{font-size:16px;padding:9px 25px 10px 31px;min-width:251px}
+.hero-btn svg{width:26px;height:19px}
+/* Dekorativní oblouk je součástí původní fotografie hero.webp; nepřekreslujeme ho. */
+/* PC — HNĚDÝ PROUŽEK */
+.benefits{min-height:66px;background:linear-gradient(105deg,#a47555,#6a3b23 53%,#9b684a);color:white}
+.benefits-inner{max-width:1240px;min-height:66px;padding:0 6.4%;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);align-items:center}
+.benefit{display:flex;align-items:center;justify-content:center;gap:15px;min-height:48px;padding:7px 15px;border-right:1px solid rgba(255,255,255,.8)}.benefit:last-child{border-right:0}
+
+.benefit-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+
+/* PC – individuální velikosti ikonek */
+.benefit:nth-child(1) .benefit-icon {
+  width: 54px;
+  height: 54px;
+}
+
+.benefit:nth-child(4) .benefit-icon {
+  width: 37px;
+  height: 37px;
+}
+
+/* =====================================
+   PC – O MNĚ + MOJE SLUŽBY
+===================================== */
+
+.about-services {
+  position: relative;
+  overflow: hidden;
+  background: #fbf1eb;
+}
+
+/* O MNĚ */
+
+.about {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  grid-template-columns: 44% 56%;
+  align-items: center;
+  background: linear-gradient(
+    115deg,
+    #f5e5da 0%,
+    #fffaf7 65%,
+    #f3e4dc 100%
+  );
+}
+
+.about-photo {
+  height: 500px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  align-self: end;
+  margin-top: 70px;
+  position: relative;
+}
+
+.about-photo-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540px;
+  height: 500px;
+  z-index: 5;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right 20%;
+
+  clip-path: path("M 0 0 H 400 C 490 0 530 110 540 205 C 550 320 490 400 405 420 C 250 440 110 460 0 500 Z");
+}
+
+.about-content {
+  padding: 35px 9% 45px 6%;
+  position: relative;
+  z-index: 2;
+}
+
+.about h2 {
+  font: normal 400 56px/1.1 Georgia, serif;
+  margin: 0 0 22px;
+}
+.about h2::after {
+  content: "";
+  display: inline-block;
+  width: 85px;
+  height: 1px;
+  background: #8a4c2c;
+  margin: 0 0 12px 18px;
+}
+
+.about p {
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 15px;
+  color: #211712;
+  font-weight: 500;
+}
+
+/* PC – PODPIS V SEKCI O MNĚ */
+
+.about-signature {
+  display: block;
+  width: 300px;
+  max-width: 75%;
+  height: auto;
+  margin: 5px 0 0 auto;
+}
+
+/* MOJE SLUŽBY */
+
+.services {
+  position: relative;
+  background: #ffffff;
+  padding: 65px 5% 75px;
+}
+
+.services h2 {
+  font: normal 400 53px/1.2 Georgia, serif;
+  text-align: center;
+  margin: 0;
+}
+
+.services-title-line {
+  width: 65px;
+  height: 1px;
+  background: #8a4c2c;
+  margin: 16px auto 35px;
+}
+
+.services-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+/* PC – KARTY SLUŽEB */
+
+.service-card {
+  position: relative;
+  height: 280px;
+
+  overflow: hidden;
+  background: #e8d5c9;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+}
+
+.service-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #d9bfb0;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(112, 82, 69, 0.22);
+}
+
+.service-photo {
+  filter: saturate(0.65) contrast(0.85) brightness(0.82);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.service-card:hover .service-photo {
+  transform: scale(1.06);
+  filter: saturate(0.65) contrast(0.85);
+}
+
+.service-card {
+  cursor: pointer;
+}
+.service-name {
+  position: absolute;
+  inset: 15px;
+  z-index: 2;
+
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 12px;
+
+  padding: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  background: transparent;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.service-name::after {
+  content: "→";
+  display: block;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-name::after {
+  transform: translateX(5px);
+}
+
+/* =====================================
+   PC – DÁRKOVÉ POUKAZY
+===================================== */
+
+.vouchers {
+  background: #ffffff;
+  padding: 55px 6% 45px;
+  scroll-margin-top: 110px;
+}
+
+.vouchers-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.vouchers-photo {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+}
+
+.vouchers-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.vouchers-content h2 {
+  font: normal 400 42px/1.2 Georgia, serif;
+  color: #3c2118;
+  margin: 0;
+}
+
+.vouchers-line {
+  width: 75px;
+  height: 1px;
+  background: #8a4c2c;
+  margin: 20px 0 26px;
+}
+
+.vouchers-content p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #3c2118;
+  margin: 0 0 30px;
+}
+
+.vouchers-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: #8a4c2c;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color .3s ease;
+}
+
+.vouchers-link span {
+  font-size: 29px;
+  font-weight: 400;
+  transition: transform .3s ease;
+}
+
+.vouchers-link:hover {
+  color: #4e2918;
+}
+
+.vouchers-link:hover span {
+  transform: translateX(6px);
+}
+
+.vouchers::after {
+  content: "";
+  display: block;
+  width: 75%;
+  max-width: 950px;
+  height: 3px;
+  margin: 45px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #e8cfc1,
+    transparent
+  );
+}
+
+
+/* =====================================
+   PC – KONTAKT
+===================================== */
+
+.contact {
+  background: linear-gradient(
+  90deg,
+  #efd7c9 0%,
+  #f7e9e1 25%,
+  #fffaf7 50%,
+  #f7e9e1 75%,
+  #efd7c9 100%
+);
+  padding: 22px 6% 35px;
+  scroll-margin-top: 110px;
+  color: #000;
+}
+
+.contact-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font: normal 400 42px/1.2 Georgia, serif;
+  color: #000;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.contact-title-line {
+  width: 65px;
+  height: 1px;
+  background: #8a4c2c;
+  margin: 16px auto 15px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1.15fr 0.95fr;
+  align-items: center;
+  gap: 0;
+}
+
+.contact-column {
+  min-width: 0;
+}
+
+/* PROVOZOVNY */
+
+.contact-places {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.contact-place {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-right: 15px;
+}
+
+.contact-place + .contact-place {
+  border-left: 1px solid #cda995;
+  padding-left: 22px;
+}
+
+.contact-icon {
+  display: flex;
+  flex-shrink: 0;
+  color: #8a4c2c;
+}
+
+.contact-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: currentColor;
+}
+
+.contact-place strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.contact-place p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 2px 0 0;
+}
+
+/* TELEFON, EMAIL A SOCIÁLNÍ SÍTĚ */
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 20px 0 25px;
+  border-left: 1px solid #cda995;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #3c2118;
+}
+
+.contact-detail svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: #8a4c2c;
+}
+
+.contact-detail:hover {
+  color: #a76b43;
+}
+
+/* OTEVÍRACÍ DOBA */
+
+.contact-hours {
+  padding-left: 35px;
+  border-left: 1px solid #cda995;
+}
+
+.contact-hours-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 8px;
+}
+
+.contact-hours-heading svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  stroke: #8a4c2c;
+}
+
+.contact-hours h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-hours p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 13px 43px;
+}
+
+.contact-btn {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 9px 19px;
+  margin-left: 0;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.contact-btn span {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* PC – ČERNÉ PÍSMO V KONTAKTU */
+
+.contact h2,
+.contact h3,
+.contact-place strong,
+.contact-place p,
+.contact-detail,
+.contact-hours p {
+  color: #000;
+}
+
+/* =====================================
+   PC – FOOTER
+===================================== */
+
+.site-footer {
+  background: linear-gradient(
+    105deg,
+    #5b301c 0%,
+    #75462d 50%,
+    #4b2515 100%
+  );
+  color: #fff;
+  padding: 19px 6%;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.footer-inner span + span {
+  border-left: 1px solid rgba(255,255,255,.65);
+  padding-left: 28px;
+}
+
+
+/* =====================================
+   PC – MODALY SLUŽEB
+===================================== */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(35, 22, 17, 0.65);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  padding: 55px 65px 50px;
+}
+
+.modal-content h2 {
+  font: normal 400 42px/1.2 Georgia,serif;
+  color:#743a1c;
+  text-align:center;
+  letter-spacing: 0;
+  margin:0;
+}
+
+/* PC – LOGO NAD NADPISEM MODALU */
+.modal-content h2::before {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 65px;
+  margin: 0 auto 15px;
+  background: url("logo-modaly.jpeg") center / contain no-repeat;
+}
+
+.modal-title-line {
+  width: 70px;
+  height: 1px;
+  background: #8a4c2c;
+  margin: 20px auto 35px;
+}
+
+.modal-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  z-index: 10;
+  width: 38px;
+  height: 38px;
+  margin: 12px 12px -50px 0;
+  border: none;
+  background: #ffffff;
+  color: #743a1c;
+  font-size: 30px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.modal-btn {
+  display: flex;
+  width: fit-content;
+  margin: 35px auto 0;
+  padding: 12px 35px;
+  font-size: 15px;
+}
+
+.benefit span{font-size:14px;line-height:1.25;white-space:nowrap}
+
+/* =====================================
+   PC – CENÍK V MODALU
+===================================== */
+
+.modal-section {
+  margin-bottom: 0;
+}
+
+.modal-section h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #743a1c;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #d8b9a7;
+}
+
+.modal-service {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eee7e2;
+}
+
+.modal-service-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.modal-service h4 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #3c2118;
+  margin: 0 0 2px;
+}
+
+.modal-service p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #665a54;
+  margin: 0 0 8px;
+}
+
+.modal-duration {
+  display: block;
+  font-size: 12px;
+  color: #967766;
+  margin-top: 5px;
+}
+
+.modal-price {
+  flex-shrink: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.modal-note {
+  font-size: 13px;
+  font-weight: 600;
+  color: #743a1c;
+  background: #faf4f0;
+  padding: 14px 18px;
+  margin: 20px 0 0;
+  text-align: center;
+}
+
+/* TABLET – CENÍK */
+@media (max-width: 760px) {
+  .modal-section h3 {
+    font-size: 17px;
+  }
+
+  .modal-service {
+    gap: 15px;
+  }
+}
+
+/* MOBIL – CENÍK */
+@media (max-width: 440px) {
+  .modal-section {
+    margin-bottom: 30px;
+  }
+
+  .modal-section h3 {
+    font-size: 16px;
+  }
+
+  .modal-service {
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .modal-service h4 {
+    font-size: 14px;
+  }
+
+  .modal-service p {
+    font-size: 12px;
+  }
+
+  .modal-price {
+    font-size: 14px;
+  }
+
+  .modal-note {
+    font-size: 12px;
+    padding: 12px;
+  }
+}
+
+/* PC – KOMPAKTNÍ CENÍK DEPILACE */
+
+.modal-depilace .modal-service {
+  padding: 4px 0;
+}
+
+.modal-depilace .modal-service h4 {
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.modal-depilace .modal-duration {
+  margin-top: 0;
+}
+
+/* PC – DVOJITÉ CENY OBOČÍ A ŘAS */
+.modal-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 15px;
+  padding: 2px 0;
+  font-size: 13px;
+  color: #000;
+}
+
+.modal-price-row strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* PC – ČERNÉ PÍSMO VE VŠECH MODALECH */
+.modal-content h2,
+.modal-content h3,
+.modal-content h4,
+.modal-content p,
+.modal-content .modal-duration,
+.modal-content .modal-price,
+.modal-content .modal-note,
+.modal-content small {
+  color: #000;
+}
+
+/* =====================================
+   PC – MODAL KONTAKTNÍHO FORMULÁŘE
+===================================== */
+
+.form-modal-box {
+  width: 92%;
+  max-width: 700px;
+  border-radius: 22px;
+  background: #fff;
+}
+
+.form-modal-content {
+  padding: 24px 35px 30px;
+}
+
+.form-modal-content h2 {
+  color: #000;
+  font-size: 34px;
+  text-align: center;
+  margin: 0;
+}
+
+.form-modal-content .modal-title-line {
+  width: 55px;
+  margin: 12px auto 22px;
+}
+
+.beauty-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 16px;
+}
+
+.beauty-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.beauty-form-full {
+  grid-column: 1 / -1;
+}
+
+.beauty-form-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3c2118;
+}
+
+.beauty-form-field input,
+.beauty-form-field select,
+.beauty-form-field textarea {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1px solid #e7d7cd;
+  border-radius: 9px;
+  background: #fff;
+  color: #3c2118;
+  font: 13px 'DM Sans', Arial, sans-serif;
+}
+
+.beauty-form-field input,
+.beauty-form-field select {
+  height: 40px;
+}
+
+.beauty-form-field textarea {
+  min-height: 80px;
+  resize: none;
+  overflow-y: hidden;
+}
+
+.beauty-form-field textarea::placeholder {
+  color: #8b807a;
+}
+
+.beauty-form-field input:focus,
+.beauty-form-field select:focus,
+.beauty-form-field textarea:focus {
+  outline: 1px solid #8a4c2c;
+}
+
+/* PC – zachování bílého pozadí při automatickém vyplnění */
+.beauty-form-field input:-webkit-autofill,
+.beauty-form-field input:-webkit-autofill:hover,
+.beauty-form-field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #3c2118 !important;
+  caret-color: #3c2118;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.beauty-form-note {
+  margin: 14px 0 16px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #806a5c;
+}
+
+.beauty-form-submit {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px 22px;
+  font: 600 13px 'DM Sans', Arial, sans-serif;
+}
+
+.beauty-form-submit:disabled {
+  cursor: not-allowed;
+  opacity: .85;
+  transform: none;
+}
+
+/* TABLET – FORMULÁŘ */
+@media (max-width: 760px) {
+  .form-modal-content {
+    padding: 45px 25px 30px;
+  }
+
+  .beauty-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .beauty-form-full {
+    grid-column: auto;
+  }
+}
+
+/* MOBIL – FORMULÁŘ */
+@media (max-width: 440px) {
+  .form-modal-content {
+    padding: 42px 18px 25px;
+  }
+
+  .form-modal-content h2 {
+    font-size: 30px;
+  }
+
+  .beauty-form-submit {
+    margin: 0 auto;
+  }
+}
+
+/* TABLET */
+@media(max-width:1050px){.nav-inner{padding:0 4%;gap:13px}.brand-mark{width:61px}.brand-mark img{width:138px}.brand-name{font-size:31px}.brand-sub{font-size:9px;letter-spacing:2.4px}.nav-links{gap:17px;font-size:13px}.nav-btn{padding:9px 13px;font-size:12px}.hero-content{padding-left:6%}.benefits-inner{padding:0 2%}.benefit{gap:9px;padding:7px}.benefit svg{width:36px;height:36px}.benefit span{font-size:12px}}
+@media(max-width:760px){.site-header{height:75px}.nav-inner{padding:0 5%}.brand-mark{width:60px;height:64px}.brand-name{font-size:31px}.brand-sub{font-size:9px}.nav-links{display:none;position:absolute;top:75px;left:0;right:0;padding:20px;background:#fffaf6;box-shadow:0 10px 20px #4422111c;flex-direction:column;align-items:center;gap:12px}.nav-links.open{display:flex}.menu-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:0;color:var(--ink);margin-left:auto;cursor:pointer}.menu-toggle svg{width:27px;height:27px}.nav-btn{padding:9px 12px}.hero{height:510px;background-image:linear-gradient(180deg,rgba(255,246,240,.92),rgba(255,246,240,.77) 37%,rgba(255,246,240,0) 72%),url('hero.webp');background-position:63% center}.hero-content{justify-content:flex-start;padding:56px 6% 20px}.eyebrow{font-size:11px;letter-spacing:1.9px;margin-left:0}.hero h1{font-size:clamp(40px,8vw,56px);letter-spacing:-1px}.hero-desc{font-size:14px;max-width:360px}.hero-btn{font-size:14px;min-width:0;padding:10px 20px}.benefits{display:none}.benefit{justify-content:flex-start;padding:12px;border-right:0}.benefit:nth-child(odd){border-right:1px solid rgba(255,255,255,.55)}.benefit span{font-size:12px}}
+/* MOBIL */
+@media(max-width:440px){.brand{gap:4px}.brand-mark{width:49px}.brand-mark img{width:112px}.brand-name{font-size:26px}.brand-sub{font-size:7px;letter-spacing:2px}.nav-btn{font-size:0;gap:0;width:39px;height:39px;padding:0}.nav-btn svg{width:20px}.nav-inner{gap:5px}.hero{height:525px;background-position:61% center}.hero-content{padding-top:48px}.hero h1{font-size:42px}.eyebrow{font-size:10px;letter-spacing:1.2px}.benefit svg{width:30px;height:30px}.benefit{gap:7px;padding:9px 6px}.benefit span{font-size:10px}}
+
+/* TABLET – MODAL */
+@media (max-width: 760px) {
+  .modal-overlay {
+    padding: 18px;
+  }
+
+  .modal-content {
+    padding: 50px 30px 35px;
+  }
+
+  .modal-content h2 {
+    font-size: 34px;
+  }
+}
+
+/* MOBIL – MODAL */
+@media (max-width: 440px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-box {
+    max-height: 94dvh;
+  }
+
+  .modal-content {
+    padding: 48px 20px 30px;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+  }
+
+  .modal-title-line {
+    margin: 15px auto 25px;
+  }
+
+  .modal-close {
+    top: 5px;
+    margin: 5px 5px -45px 0;
+  }
+}
+
+/* =====================================
+   TABLET – HERO
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .hero {
+    height: 430px;
+    background-size: 100% 100%, auto 100%;
+    background-position: center, center;
+  }
+
+  .hero-content {
+    padding: 30px 5%;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    white-space: normal;
+    max-width: 370px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+    max-width: 390px;
+    line-height: 1.05;
+    letter-spacing: -1.3px;
+    margin-bottom: 20px;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    max-width: 340px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .hero-btn {
+    font-size: 13px;
+    min-width: 0;
+    padding: 10px 20px;
+  }
+}
+
+/* =====================================
+   MOBIL – HERO
+===================================== */
+
+@media (max-width: 760px) {
+
+  .hero {
+    height: 540px;
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(255,245,238,.96) 0%,
+        rgba(255,245,238,.88) 30%,
+        rgba(255,245,238,.15) 70%,
+        rgba(255,245,238,0) 100%
+      ),
+      url('hero.webp');
+
+    background-size: 100% 100%, auto 100%;
+    background-position: center, 60% center;
+  }
+
+  .hero-content {
+    padding: 45px 6% 20px;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: normal;
+    margin-bottom: 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(35px, 8vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 340px;
+    margin-bottom: 20px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .hero-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+    min-width: 0;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – HERO
+===================================== */
+
+@media (max-width: 440px) {
+
+  .hero {
+    height: 550px;
+    background-position: center, 60% center;
+  }
+
+  .hero-content {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .hero-desc {
+    font-size: 12px;
+    max-width: 310px;
+  }
+}
+
+/* =====================================
+   TABLET – SLUŽBY
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .services {
+    padding: 55px 5% 65px;
+  }
+
+  .services h2 {
+    font-size: 46px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 760px;
+  }
+
+  .service-card {
+    height: 290px;
+  }
+
+  .service-name {
+    font-size: 17px;
+  }
+}
+
+/* =====================================
+   MOBIL – SLUŽBY
+===================================== */
+
+@media (max-width: 760px) {
+
+  .services {
+    padding: 45px 6% 55px;
+  }
+
+  .services h2 {
+    font-size: 39px;
+  }
+
+  .services-title-line {
+    margin: 15px auto 28px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 390px;
+  }
+
+  .service-card {
+    height: 270px;
+  }
+
+  .service-name {
+    font-size: 16px;
+    inset: 13px;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – SLUŽBY
+===================================== */
+
+@media (max-width: 440px) {
+
+  .services {
+    padding: 40px 5% 50px;
+  }
+
+  .services h2 {
+    font-size: 35px;
+  }
+
+  .services-grid {
+    max-width: 340px;
+    gap: 15px;
+  }
+
+  .service-card {
+    height: 250px;
+  }
+
+  .service-name {
+    font-size: 15px;
+  }
+}
+
+/* =====================================
+   TABLET – O MNĚ
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .about {
+    grid-template-columns: 43% 57%;
+    min-height: 0;
+    align-items: center;
+  }
+
+  .about-photo {
+    height: 440px;
+    margin-top: 35px;
+    align-self: end;
+  }
+
+  .about-photo img {
+    object-position: center 20%;
+    clip-path: none;
+    border-radius: 0 90px 90px 0;
+  }
+
+  .about-photo-outline {
+    display: none;
+  }
+
+  .about-content {
+    padding: 35px 6%;
+  }
+
+  .about h2 {
+    font-size: 43px;
+    margin-bottom: 18px;
+  }
+
+  .about p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .about-signature {
+    width: 230px;
+    max-width: 80%;
+    margin-top: 10px;
+  }
+}
+
+/* =====================================
+   MOBIL – O MNĚ
+===================================== */
+
+@media (max-width: 760px) {
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .about-content {
+    order: 1;
+    width: 100%;
+    padding: 40px 7% 20px;
+  }
+
+  .about h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .about h2::after {
+    display: block;
+    margin: 15px auto 0;
+    width: 70px;
+  }
+
+  .about p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .about-photo {
+    order: 2;
+    width: 100%;
+    height: 380px;
+    margin-top: 0;
+  }
+
+  .about-photo img {
+    clip-path: none;
+    border-radius: 120px 120px 0 0;
+    object-position: center 20%;
+  }
+
+  .about-photo-outline {
+    display: none;
+  }
+
+  .about-signature {
+    width: 240px;
+    max-width: 80%;
+    margin: 20px auto 0;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – O MNĚ
+===================================== */
+
+@media (max-width: 440px) {
+
+  .about-content {
+    padding: 35px 6% 20px;
+  }
+
+  .about h2 {
+    font-size: 36px;
+  }
+
+  .about p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .about-photo {
+    height: 330px;
+  }
+
+  .about-signature {
+    width: 210px;
+  }
+}
+
+/* =====================================
+   TABLET – DÁRKOVÉ POUKAZY
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .vouchers {
+    padding: 50px 5% 40px;
+  }
+
+  .vouchers-inner {
+    grid-template-columns: 42% minmax(0, 1fr);
+    gap: 30px;
+    max-width: 850px;
+  }
+
+  .vouchers-photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .vouchers-content h2 {
+    font-size: 35px;
+  }
+
+  .vouchers-line {
+    margin: 16px 0 20px;
+  }
+
+  .vouchers-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .vouchers-link {
+    font-size: 13px;
+  }
+
+  .vouchers::after {
+    margin-top: 35px;
+  }
+}
+
+/* =====================================
+   MOBIL – DÁRKOVÉ POUKAZY
+===================================== */
+
+@media (max-width: 760px) {
+
+  .vouchers {
+    padding: 45px 6% 35px;
+  }
+
+  .vouchers-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .vouchers-content {
+    order: 1;
+    text-align: center;
+    width: 100%;
+  }
+
+  .vouchers-content h2 {
+    font-size: 36px;
+  }
+
+  .vouchers-line {
+    margin: 17px auto 22px;
+  }
+
+  .vouchers-content p {
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 430px;
+    margin: 0 auto 22px;
+  }
+
+  .vouchers-link {
+    font-size: 13px;
+    justify-content: center;
+  }
+
+  .vouchers-photo {
+    order: 2;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .vouchers-photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .vouchers::after {
+    width: 85%;
+    margin-top: 30px;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – DÁRKOVÉ POUKAZY
+===================================== */
+
+@media (max-width: 440px) {
+
+  .vouchers {
+    padding: 38px 5% 30px;
+  }
+
+  .vouchers-content h2 {
+    font-size: 32px;
+  }
+
+  .vouchers-content p {
+    font-size: 13px;
+  }
+
+  .vouchers-photo {
+    max-width: 320px;
+  }
+
+  .vouchers-inner {
+    gap: 18px;
+  }
+}
+
+/* =====================================
+   TABLET – KONTAKT A FOOTER
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .contact {
+    padding: 40px 5% 50px;
+  }
+
+  .contact h2 {
+    font-size: 39px;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 25px;
+    align-items: start;
+  }
+
+  /* Provozovny přes celou šířku */
+  .contact-places {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .contact-place {
+    justify-content: center;
+  }
+
+  .contact-details {
+    border-left: none;
+    padding: 0 15px;
+    align-items: flex-start;
+  }
+
+  .contact-hours {
+    padding-left: 25px;
+  }
+
+  .contact-detail {
+    font-size: 13px;
+  }
+
+  .contact-hours p {
+    font-size: 13px;
+  }
+
+  /* TABLET – SJEDNOCENÉ ROZLOŽENÍ KONTAKTU */
+
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 24px;
+    align-items: start;
+  }
+
+  /* Provozovny v horní řadě */
+  .contact-places {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-place {
+    justify-content: flex-start;
+    padding: 0 12px;
+  }
+
+.contact-place + .contact-place {
+  border-left: none;
+  padding-left: 24px;
+}
+
+  /* Spodní řada */
+  .contact-details {
+    padding: 20px 12px 0;
+    border-left: none;
+    border-top: 1px solid #cda995;
+  }
+
+  .contact-hours {
+    padding: 20px 12px 0;
+    border-left: none;
+    border-top: 1px solid #cda995;
+  }
+
+  .contact-detail {
+    overflow-wrap: anywhere;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 18px 4%;
+  }
+
+  .footer-inner {
+    gap: 16px;
+    font-size: 11px;
+    flex-wrap: wrap;
+  }
+
+  .footer-inner span + span {
+    padding-left: 16px;
+  }
+}
+
+/* =====================================
+   MOBIL – KONTAKT A FOOTER
+===================================== */
+
+@media (max-width: 760px) {
+
+  .contact {
+    padding: 40px 6% 45px;
+  }
+
+  .contact h2 {
+    font-size: 37px;
+  }
+
+  .contact-title-line {
+    margin: 15px auto 30px;
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 25px;
+  }
+
+  /* PROVOZOVNY */
+  .contact-places {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .contact-place {
+    padding: 0;
+    gap: 14px;
+  }
+
+  .contact-place + .contact-place {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .contact-place strong {
+    font-size: 15px;
+  }
+
+  .contact-place p {
+    font-size: 13px;
+  }
+
+  /* KONTAKTNÍ ÚDAJE */
+  .contact-details {
+    border-left: none;
+    border-top: 1px solid #cda995;
+    padding: 22px 0 0;
+    gap: 14px;
+  }
+
+  .contact-detail {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+  }
+
+  /* OTEVÍRACÍ DOBA */
+  .contact-hours {
+    border-left: none;
+    border-top: 1px solid #cda995;
+    padding: 22px 0 0;
+  }
+
+  .contact-hours h3 {
+    font-size: 16px;
+  }
+
+  .contact-hours p {
+    font-size: 13px;
+  }
+
+  .contact-btn {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 25px 5%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 9px;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .footer-inner span + span {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – KONTAKT A FOOTER
+===================================== */
+
+@media (max-width: 440px) {
+
+  .contact {
+    padding: 35px 7% 40px;
+  }
+
+  .contact h2 {
+    font-size: 34px;
+  }
+
+  .contact-grid {
+    gap: 22px;
+  }
+
+  .contact-place {
+    gap: 12px;
+  }
+
+  .contact-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .contact-detail {
+    font-size: 12px;
+  }
+
+  .contact-hours-heading svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .contact-btn {
+    font-size: 12px;
+  }
+
+  .footer-inner {
+    font-size: 10px;
+  }
+}
+
+/* =====================================
+   TABLET – KONTAKTNÍ FORMULÁŘ
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .form-modal-box {
+    width: 90%;
+    max-width: 680px;
+    max-height: 90dvh;
+  }
+
+  .form-modal-content {
+    padding: 25px 30px 30px;
+  }
+
+  .form-modal-content h2 {
+    font-size: 32px;
+  }
+
+  .beauty-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 15px;
+  }
+}
+
+/* =====================================
+   MOBIL – KONTAKTNÍ FORMULÁŘ
+===================================== */
+
+@media (max-width: 760px) {
+
+  .modal-overlay:has(.form-modal-box) {
+    padding: 12px;
+  }
+
+  .form-modal-box {
+    width: 100%;
+    max-width: 500px;
+    max-height: 92dvh;
+    border-radius: 16px;
+  }
+
+  .form-modal-content {
+    padding: 35px 22px 25px;
+  }
+
+  .form-modal-content h2 {
+    font-size: 30px;
+  }
+
+  .beauty-form-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .beauty-form-full {
+    grid-column: auto;
+  }
+
+  .beauty-form-field input,
+  .beauty-form-field select {
+    height: 42px;
+  }
+
+  .beauty-form-field textarea {
+    min-height: 85px;
+  }
+
+  .beauty-form-note {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – KONTAKTNÍ FORMULÁŘ
+===================================== */
+
+@media (max-width: 440px) {
+
+  .form-modal-content {
+    padding: 32px 17px 22px;
+  }
+
+  .form-modal-content h2 {
+    font-size: 27px;
+  }
+
+  .form-modal-content .modal-title-line {
+    margin: 10px auto 18px;
+  }
+
+  .beauty-form-field label {
+    font-size: 12px;
+  }
+
+  .beauty-form-field input,
+  .beauty-form-field select,
+  .beauty-form-field textarea {
+    font-size: 16px;
+  }
+
+  .beauty-form-note {
+    font-size: 10px;
+  }
+
+  .beauty-form-submit {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}
+
+/* =====================================
+   TABLET – MODALY SLUŽEB
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .modal-overlay {
+    padding: 20px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 720px;
+    max-height: 90dvh;
+    overflow-y: auto;
+    padding: 35px 35px 30px;
+  }
+
+  .modal-content h2 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
+
+/* =====================================
+   MOBIL – MODALY SLUŽEB
+===================================== */
+
+@media (max-width: 760px) {
+
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 520px;
+    max-height: 92dvh;
+    overflow-y: auto;
+    padding: 30px 22px 25px;
+  }
+
+  .modal-content h2 {
+    font-size: 30px;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – MODALY SLUŽEB
+===================================== */
+
+@media (max-width: 440px) {
+
+  .modal-overlay {
+    padding: 8px;
+  }
+
+  .modal-content {
+    padding: 25px 16px 22px;
+    max-height: 94dvh;
+  }
+
+  .modal-content h2 {
+    font-size: 26px;
+  }
+}
+
+/* =====================================
+   TABLET – NAVIGACE
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+
+  .site-header {
+    height: 76px;
+  }
+
+  .nav-inner {
+    padding: 0 4%;
+    gap: 15px;
+  }
+
+  .brand-logo {
+    width: 180px;
+    transform: translateY(8px);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    padding: 22px;
+    background: #fffaf6;
+    box-shadow: 0 12px 20px rgba(68,34,17,.12);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    z-index: 20;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    background: transparent;
+    border: 0;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .menu-toggle svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .nav-btn {
+    font-size: 13px;
+    padding: 10px 15px;
+  }
+}
+
+/* =====================================
+   MOBIL – NAVIGACE
+===================================== */
+
+@media (max-width: 760px) {
+
+  .site-header {
+    height: 72px;
+  }
+
+  .nav-inner {
+    padding: 0 5%;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 155px;
+    transform: translateY(7px);
+  }
+
+  .nav-links {
+    top: 72px;
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 15px;
+    gap: 15px;
+    font-size: 14px;
+    z-index: 20;
+  }
+
+  .menu-toggle {
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .nav-btn {
+    flex-shrink: 0;
+    font-size: 12px;
+    padding: 9px 12px;
+    gap: 7px;
+  }
+
+  .nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* =====================================
+   MALÝ MOBIL – NAVIGACE
+===================================== */
+
+@media (max-width: 440px) {
+
+  .site-header {
+    height: 68px;
+  }
+
+  .nav-inner {
+    padding: 0 4%;
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 140px;
+    transform: translateY(6px);
+  }
+
+  .nav-links {
+    top: 68px;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menu-toggle svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-btn {
+    font-size: 0;
+    width: 39px;
+    height: 39px;
+    padding: 0;
+    gap: 0;
+  }
+
+  .nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<header class="site-header" id="uvod">
+  <div class="nav-inner">
+    <a class="brand" href="#uvod" aria-label="Fit Art Beauty Petra – úvod">
+  <img src="logo.webp" alt="Fit Art Beauty Petra" class="brand-logo">
+</a>
+    <nav class="nav-links" id="nav-links" aria-label="Hlavní navigace">
+      <a href="#uvod">Úvod</a><a href="#o-mne">O mně</a><a href="#sluzby">Služby</a><a href="#cenik">Ceník</a><a href="#poukazy">Poukazy</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-links" onclick="const n=document.getElementById('nav-links');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <a href="#kontakt" class="btn nav-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18"/></svg>Objednat se</a>
+  </div>
+  <svg class="header-wave" viewBox="0 0 1055 33" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H1055V0H0V8C125 33 223 27 345 12C499 -7 719 0 1055 0Z"/></svg>
+</header>
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <p class="eyebrow">KOSMETIKA&nbsp; · &nbsp;VIZÁŽISTIKA&nbsp; · &nbsp;PÉČE O PLEŤ</p>
+      <h1 id="hero-title">Krása, péče<br>a chvíle jen pro Vás.</h1>
+      <p class="hero-desc">Profesionální kosmetická péče, vizážistické služby<br class="desktop-break"> a osobní poradenství v oblasti krásy,<br class="desktop-break"> propojené se zdravým životním stylem.</p>
+      <a class="btn hero-btn" href="#sluzby">Prohlédnout služby <svg viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M1 10h25m-8-8 8 8-8 8"/></svg></a>
+    </div>
+  </section>
+  <section class="benefits" aria-label="Naše přednosti">
+   
+
+<div class="benefits-inner">
+
+  <div class="benefit">
+    <img src="listky.png" alt="" class="benefit-icon">
+    <span>Individuální péče<br>a poradenství</span>
+  </div>
+
+  <div class="benefit">
+    <img src="diamant.png" alt="" class="benefit-icon">
+    <span>Moderní přístroje<br>a účinná ošetření</span>
+  </div>
+
+  <div class="benefit">
+    <img src="srdce.png" alt="" class="benefit-icon">
+    <span>Péče o pleť,<br>krk a dekolt</span>
+  </div>
+
+  <div class="benefit">
+    <img src="darek.png" alt="" class="benefit-icon">
+    <span>Dárkové poukazy<br>pro Vaše blízké</span>
+  </div>
+
+</div>
+
+    </section>
+
+  <!-- O MNĚ + MOJE SLUŽBY -->
+  <div class="about-services">
+
+<!-- MOJE SLUŽBY -->
+    <section class="services" id="sluzby">
+
+      <h2>Moje služby</h2>
+      <div class="services-title-line"></div>
+
+      <div class="services-grid">
+
+        <div class="service-card"
+     role="button"
+     tabindex="0"
+     aria-haspopup="dialog"
+     onclick="openModal('modal-kosmetika')"
+     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openModal('modal-kosmetika'); }">
+
+  <div class="service-photo"
+       style="background-image: url('kosmetika.webp');">
+  </div>
+
+  <div class="service-name">
+    Kosmetická péče o pleť
+  </div>
+
+</div>
+
+        <div class="service-card" role="button" tabindex="0" aria-haspopup="dialog"
+     onclick="openModal('modal-osetreni')"
+     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openModal('modal-osetreni'); }">
+  <div class="service-photo"
+       style="background-image: url('osetreni.webp');">
+  </div>
+  <div class="service-name">
+    Speciální ošetření pleti
+  </div>
+</div>
+
+        <div class="service-card" role="button" tabindex="0" aria-haspopup="dialog"
+     onclick="openModal('modal-oboci')"
+     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openModal('modal-oboci'); }">
+  <div class="service-photo"
+       style="background-image: url('rasy.webp');">
+  </div>
+  <div class="service-name">
+    Úprava obočí a řas
+  </div>
+</div>
+
+        <div class="service-card" role="button" tabindex="0" aria-haspopup="dialog"
+     onclick="openModal('modal-liceni')"
+     onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openModal('modal-liceni'); }">
+  <div class="service-photo"
+       style="background-image: url('liceni.webp');">
+  </div>
+  <div class="service-name">
+    Vizážistika a líčení
+  </div>
+</div>
+
+
+      </div>
+
+        </section>
+
+    <!-- O MNĚ -->
+    <section class="about" id="o-mne">
+
+      <div class="about-photo">
+  <img src="petra-kotyzova.jpeg"
+       alt="Petra Voják Kotýzová">
+
+  <svg class="about-photo-outline"
+       viewBox="0 0 540 500"
+       preserveAspectRatio="none"
+       aria-hidden="true">
+    <path
+      d="M 0 0
+         H 400
+         C 490 0 530 110 540 205
+         C 550 320 490 400 405 420
+         C 250 440 110 460 0 500"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="4"
+      vector-effect="non-scaling-stroke"/>
+  </svg>
+</div>
+
+      <div class="about-content">
+
+        <h2>O mně</h2>
+
+        <p>Srdečně Vás vítám! Jmenuji se Petra Voják Kotýzová a věřím, že každá žena si zaslouží cítit se krásná, sebevědomá a sama sebou.</p>
+
+        <p>V Salonu krásy v Kácově a v Golden salonu v Čáslavi nabízím individuální kosmetickou péči, vizážistické služby a osobní poradenství v oblasti krásy, propojené se zdravým životním stylem. Protože věřím, že skutečná krása vychází z rovnováhy a péče o sebe. Společně se zaměříme na potřeby Vaší pleti, podtrhneme Vaši přirozenou krásu a najdeme péči, ve které se budete cítit opravdu dobře.</p>
+
+        <p>Mým cílem je, abyste odcházela nejen s krásnější pletí, ale také s pocitem, že jste si dopřála chvíli jen pro sebe.</p>
+
+<img src="podpis.webp"
+     alt="Podpis Petry Voják Kotýzové"
+     class="about-signature">
+
+</div>
+
+    </section>
+
+  </div>
+
+<!-- DÁRKOVÉ POUKAZY -->
+<section class="vouchers" id="poukazy">
+
+  <div class="vouchers-inner">
+
+    <div class="vouchers-photo">
+      <img src="poukaz2.webp" alt="Dárkový poukaz Fit Art Beauty Petra">
+    </div>
+
+    <div class="vouchers-content">
+
+      <h2>Dárkové poukazy</h2>
+
+      <div class="vouchers-line"></div>
+
+      <p>
+        Darujte svým blízkým chvíle odpočinku, krásy a péče.
+        Dárkový poukaz Fit Art Beauty potěší při každé příležitosti.
+      </p>
+
+      <a href="#kontakt" class="vouchers-link">
+        CHCI POUKAZ <span aria-hidden="true">⟶</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- KONTAKT -->
+<section class="contact" id="kontakt">
+  <div class="contact-inner">
+
+<h2>Kontakt</h2>
+<div class="contact-title-line"></div>
+
+
+    <div class="contact-grid">
+
+      <!-- PROVOZOVNY -->
+      <div class="contact-column contact-places">
+
+        <div class="contact-place">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke-width="1.7" stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.7"/>
+            </svg>
+          </span>
+          <div>
+            <strong>Salon krásy</strong>
+            <p>Jiráskova 79<br>285 09 Kácov</p>
+          </div>
+        </div>
+
+        <div class="contact-place">
+          <span class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke-width="1.7" stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+              <circle cx="12" cy="10" r="2.7"/>
+            </svg>
+          </span>
+          <div>
+            <strong>Golden salon</strong>
+            <p>Husova 464/16<br>286 01 Čáslav</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KONTAKTNÍ ÚDAJE -->
+      <div class="contact-column contact-details">
+
+        <a class="contact-detail" href="tel:+420723523167">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke-width="1.8" stroke-linecap="round"
+               stroke-linejoin="round">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.7L8.1 11a16 16 0 0 0 4.9 4.9l1.6-1.9a2 2 0 0 1 1.7-.6l3 .5a2 2 0 0 1 1.7 1.9Z"/>
+          </svg>
+          +420 723 523 167
+        </a>
+
+        <a class="contact-detail"
+           href="mailto:fitartbeautypetra@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke-width="1.8" stroke-linecap="round"
+               stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <path d="m3 7 9 6 9-6"/>
+          </svg>
+          fitartbeautypetra@gmail.com
+        </a>
+
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke-width="1.8">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="#8a4c2c" stroke="none"/>
+          </svg>
+          fitartbeautypetra
+        </div>
+
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="4"
+                  fill="#8a4c2c"/>
+            <text x="12" y="19" text-anchor="middle"
+                  font-size="19" font-family="Arial"
+                  font-weight="bold" fill="white">f</text>
+          </svg>
+          Fit Art Beauty Petra
+        </div>
+
+      </div>
+
+      <!-- OTEVÍRACÍ DOBA -->
+      <div class="contact-column contact-hours">
+
+        <div class="contact-hours-heading">
+          <svg viewBox="0 0 24 24" fill="none"
+               stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="16" rx="2"/>
+            <path d="M7 2v6M17 2v6M3 10h18"/>
+            <path d="M8 14h2M14 14h2M8 18h2"/>
+          </svg>
+          <h3>Otevírací doba</h3>
+        </div>
+
+        <p>Pouze na objednání,<br>
+           po telefonické domluvě.</p>
+
+        <button type="button" class="btn contact-btn"
+        onclick="openModal('modal-formular')">
+  Kontaktní formulář
+  <span aria-hidden="true">⟶</span>
+</button>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Fit Art Beauty Petra</span>
+    <span>Petra Voják Kotýzová</span>
+    <span>IČO: 13968847</span>
+  </div>
+</footer>
+
+<!-- MODAL – KONTAKTNÍ FORMULÁŘ -->
+<div class="modal-overlay" id="modal-formular" aria-hidden="true">
+  <div class="modal-box form-modal-box"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-formular-title">
+
+    <button class="modal-close" type="button"
+            aria-label="Zavřít okno">×</button>
+
+    <div class="modal-content form-modal-content">
+
+      <h2 id="modal-formular-title">Napište mi</h2>
+      <div class="modal-title-line"></div>
+
+      <form class="beauty-form" onsubmit="event.preventDefault()">
+
+        <div class="beauty-form-grid">
+
+          <div class="beauty-form-field">
+            <label for="beauty-name">Jméno a příjmení</label>
+            <input type="text" id="beauty-name" name="name" required>
+          </div>
+
+          <div class="beauty-form-field">
+            <label for="beauty-email">E-mail</label>
+            <input type="email" id="beauty-email" name="email" required>
+          </div>
+
+          <div class="beauty-form-field">
+            <label for="beauty-phone">Telefon</label>
+            <input type="tel" id="beauty-phone" name="phone" required>
+          </div>
+
+          <div class="beauty-form-field">
+            <label for="beauty-location">Místo návštěvy</label>
+            <select id="beauty-location" name="location" required>
+              <option value="">Vyberte provozovnu</option>
+              <option value="Kácov">Salon krásy – Kácov</option>
+              <option value="Čáslav">Golden salon – Čáslav</option>
+            </select>
+          </div>
+
+          <div class="beauty-form-field beauty-form-full">
+            <label for="beauty-message">Zpráva</label>
+            <textarea id="beauty-message" name="message"
+          required
+          oninput="this.style.height='auto'; this.style.height=this.scrollHeight+'px';"></textarea>
+          </div>
+
+        </div>
+
+        <p class="beauty-form-note">
+          Odesláním formuláře nevzniká závazná rezervace.
+          Termín potvrdíme po vzájemné domluvě.
+        </p>
+
+        <button type="submit" class="btn beauty-form-submit" disabled>
+          Odeslat zprávu <span aria-hidden="true">⟶</span>
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL – KOSMETICKÁ PÉČE O PLEŤ -->
+<div class="modal-overlay" id="modal-kosmetika" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-kosmetika-title">
+
+    <button class="modal-close" type="button" aria-label="Zavřít okno">×</button>
+
+    <div class="modal-content">
+
+      <h2 id="modal-kosmetika-title">Kosmetická péče o pleť</h2>
+      <div class="modal-title-line"></div>
+
+      
+<!-- HLOUBKOVÁ ANALÝZA PLETI -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Hloubková analýza pleti</h4>
+      <p>Poznejte svou pleť do hloubky a co se skrývá pod povrchem.</p>
+      <span class="modal-duration">30 min</span>
+    </div>
+    <span class="modal-price">600 Kč</span>
+  </div>
+</div>
+
+
+<!-- KOSMETICKÁ PÉČE O PLEŤ A DEKOLT -->
+<div class="modal-section">
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Základní péče o pleť s masáží</h4>
+      <p>Povrchové čištění očí, rtů a pleti, peeling, změkčení pleti, hloubkové čištění ručně nebo ultrazvukovou špachtlí, masáž obličeje, krku a dekoltu, aplikace pleťové masky a závěrečná úprava pleti.</p>
+      <span class="modal-duration">60–75 min</span>
+    </div>
+    <span class="modal-price">1 000 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Péče o problematickou pleť</h4>
+      <p>Povrchové čištění očí, rtů a pleti, peeling dle typu pleti, změkčení, hloubkové čištění ručně nebo ultrazvukovou špachtlí, hloubkově čisticí maska, sérum proti akné, mikroampule anti-akné a závěrečná úprava pleti.</p>
+      <span class="modal-duration">60 min</span>
+    </div>
+    <span class="modal-price">1 040 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Hydratační péče o pleť, krk a dekolt s masáží</h4>
+      <p>Povrchové čištění očí, rtů a pleti, peeling dle typu pleti, změkčení, hloubkové čištění ručně nebo ultrazvukovou špachtlí, masáž obličeje, krku a dekoltu, pleťová maska, hydratační sérum zapracované galvanikou a závěrečná úprava pleti.</p>
+      <span class="modal-duration">75 min</span>
+    </div>
+    <span class="modal-price">1 050 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Liftingová péče o pleť, krk a dekolt s masáží</h4>
+      <p>Povrchové čištění očí, rtů a pleti, peeling dle typu pleti, změkčení, hloubkové čištění ručně nebo ultrazvukovou špachtlí, masáž obličeje, krku a dekoltu, maska s kyselinou hyaluronovou na obličej a dekolt, vyhlazující sérum zapracované galvanikou a závěrečná úprava pleti.</p>
+      <span class="modal-duration">90 min</span>
+    </div>
+    <span class="modal-price">1 230 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Skin Fitness + Skin Nutrition – péče o pleť, krk a dekolt</h4>
+      <p>Povrchové čištění očí, rtů a pleti, peeling dle typu pleti, radiofrekvence, ultrazvuk, červené LED světlo, přístrojová masáž obličeje, krku a dekoltu, maska s kyselinou hyaluronovou, sérum Skin Nutrition zapracované přístrojem a závěrečná úprava pleti.</p>
+      <span class="modal-duration">75 min</span>
+    </div>
+    <span class="modal-price">1 200 Kč</span>
+  </div>
+
+</div>
+
+
+<!-- MONOCHROMATICKÝ TUNEL -->
+<div class="modal-section">
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Monochromatický tunel ke kosmetické péči</h4>
+    </div>
+    <span class="modal-price">ZDARMA</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Monochromatický tunel samostatně + sérum</h4>
+      <p>Možnost docházet 2–3× týdně. Doporučená doba osvitu 20–30 min.</p>
+    </div>
+    <span class="modal-price">300 Kč</span>
+  </div>
+
+</div>
+
+
+<!-- DEPILACE -->
+<div class="modal-section modal-depilace" style="margin-top: 35px;">
+  <h3>Depilace</h3>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Horní ret</h4>
+      <span class="modal-duration">10 min</span>
+    </div>
+    <span class="modal-price">100 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Brada / tvář</h4>
+      <span class="modal-duration">10 min</span>
+    </div>
+    <span class="modal-price">100 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Krk</h4>
+      <span class="modal-duration">10 min</span>
+    </div>
+    <span class="modal-price">100 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Celý obličej</h4>
+      <span class="modal-duration">25 min</span>
+    </div>
+    <span class="modal-price">260 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Podpaží</h4>
+      <span class="modal-duration">15 min</span>
+    </div>
+    <span class="modal-price">300 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Ruce</h4>
+      <span class="modal-duration">20 min</span>
+    </div>
+    <span class="modal-price">400 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Nohy ke kolenům</h4>
+      <span class="modal-duration">30 min</span>
+    </div>
+    <span class="modal-price">450 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Celé nohy</h4>
+      <span class="modal-duration">45 min</span>
+    </div>
+    <span class="modal-price">650 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Bikiny</h4>
+      <span class="modal-duration">25 min</span>
+    </div>
+    <span class="modal-price">500 Kč</span>
+  </div>
+</div>
+
+
+      <a href="#kontakt" class="btn modal-btn">Objednat se</a>
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MODAL – SPECIÁLNÍ OŠETŘENÍ PLETI -->
+<div class="modal-overlay" id="modal-osetreni" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-osetreni-title">
+
+    <button class="modal-close" type="button" aria-label="Zavřít okno">×</button>
+
+    <div class="modal-content">
+      <h2 id="modal-osetreni-title">Speciální ošetření pleti</h2>
+      <div class="modal-title-line"></div>
+
+      
+<!-- AHA PEELING -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>AHA peeling GlycoHyal Syncare</h4>
+      <p>Povrchové čištění očí, rtů a pleti, příprava pleti, peeling AHA GlycoHyal G30 nebo G35 dle typu pleti, neutralizační roztok a závěrečná úprava pleti.</p>
+      <span class="modal-duration">45 min</span>
+    </div>
+    <span class="modal-price">1 100 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Příprava domácí péče na AHA peeling</h4>
+      <p>Zjemňující emulze G10 a Nicream.</p>
+    </div>
+    <span class="modal-price">1 300 Kč</span>
+  </div>
+</div>
+
+
+<!-- KOLAGENOVÉ NITĚ -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Kolagenové nitě se sérem PeptiVia a účinnými výživnými látkami</h4>
+      <p>Povrchové čištění očí, rtů a pleti, enzymový a gommage peeling, hydratace Hydrogenia, aplikace kolagenových nití se sérem PeptiVia a vitamíny dle potřeby, sérum zapracované galvanikou, maska NeoVitalia, alginátová maska a závěrečná úprava pleti.</p>
+      <span class="modal-duration">75 min</span>
+    </div>
+    <span class="modal-price">1 850 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Zvýhodněná kúra kolagenových nití</h4>
+      <p>2–4 ošetření v intervalu 7–14 dní.</p>
+      <span class="modal-duration">75 min / ošetření</span>
+    </div>
+    <span class="modal-price">1 700 Kč<br><small>za ošetření</small></span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Domácí péče po kolagenových nitích Syncare</h4>
+      <p>Hydrogenia tonikum ve spreji s minerály, Ilumenia denní krém a NeoVitalia noční krém.</p>
+    </div>
+    <span class="modal-price">3 700 Kč</span>
+  </div>
+</div>
+
+
+<!-- MICRONEEDLING -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Microneedling s aktivními séry, kyselinou hyaluronovou, vitamíny a minerály</h4>
+      <p>Povrchové čištění očí, rtů a pleti, tonizace, enzymový peeling, dezinfekce, mikrojehličkování s aktivními séry, kyselinou hyaluronovou a vitamíny dle potřeby, látková nebo alginátová maska a závěrečná péče.</p>
+      <span class="modal-duration">60 min</span>
+    </div>
+    <span class="modal-price">1 850 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Zvýhodněná kúra microneedlingu</h4>
+      <p>3–4 ošetření v intervalu 6–8 dní.</p>
+      <span class="modal-duration">60 min / ošetření</span>
+    </div>
+    <span class="modal-price">1 700 Kč<br><small>za ošetření</small></span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Domácí péče pro mastnou pleť nebo do 30+</h4>
+      <p>Hydrating denní emulze SPF 30 a Hydrating Gel-krém Artistry Skin Nutrition na noc.</p>
+    </div>
+    <span class="modal-price">1 880 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Domácí péče pro suchou pleť nebo 30+</h4>
+      <p>Renewing Reaktivační denní emulze/krém SPF 30 a Renewing Reaktivační noční krém Artistry Skin Nutrition.</p>
+    </div>
+    <span class="modal-price">3 640 Kč</span>
+  </div>
+</div>
+
+
+<!-- BB GLOW -->
+<div class="modal-section">
+
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>BB Glow microneedling s tónovacími séry, vitamíny a minerály</h4>
+      <p>Povrchové čištění očí, rtů a pleti, tonizace, enzymový peeling, dezinfekce, aplikace tónovacích sér metodou BB Glow microneedlingu, vitamíny dle potřeby, látková nebo alginátová maska a závěrečná péče.</p>
+      <span class="modal-duration">75 min</span>
+    </div>
+    <span class="modal-price">1 900 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Zvýhodněná kúra BB Glow</h4>
+      <p>3–4 ošetření v intervalu 6–8 dní.</p>
+      <span class="modal-duration">75 min / ošetření</span>
+    </div>
+    <span class="modal-price">1 750 Kč<br><small>za ošetření</small></span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Domácí péče po BB Glow pro mastnou pleť nebo do 30+</h4>
+      <p>Hydrating denní emulze SPF 30 a Hydrating Gel-krém Artistry Skin Nutrition na noc.</p>
+    </div>
+    <span class="modal-price">1 880 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Domácí péče po BB Glow pro suchou pleť nebo 30+</h4>
+      <p>Renewing Reaktivační denní emulze/krém SPF 30 a Renewing Reaktivační noční krém Artistry Skin Nutrition.</p>
+    </div>
+    <span class="modal-price">3 640 Kč</span>
+  </div>
+</div>
+
+
+      <a href="#kontakt" class="btn modal-btn">Objednat se</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MODAL – ÚPRAVA OBOČÍ A ŘAS -->
+<div class="modal-overlay" id="modal-oboci" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-oboci-title">
+
+    <button class="modal-close" type="button" aria-label="Zavřít okno">×</button>
+
+    <div class="modal-content">
+      <h2 id="modal-oboci-title">Úprava obočí a řas</h2>
+      <div class="modal-title-line"></div>
+
+      
+<!-- ÚPRAVA A BARVENÍ OBOČÍ A ŘAS -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+  <div class="modal-service-info">
+    <h4>Úprava / modelace obočí</h4>
+
+    <div class="modal-price-row">
+      <span>Samostatně · 15 min</span>
+      <strong>190 Kč</strong>
+    </div>
+
+    <div class="modal-price-row">
+      <span>Při kosmetickém ošetření · 10 min</span>
+      <strong>100 Kč</strong>
+    </div>
+  </div>
+</div>
+
+  <div class="modal-service">
+  <div class="modal-service-info">
+    <h4>Úprava / modelace a barvení obočí</h4>
+
+    <div class="modal-price-row">
+      <span>Samostatně · 15 min</span>
+      <strong>320 Kč</strong>
+    </div>
+
+    <div class="modal-price-row">
+      <span>Při kosmetickém ošetření · 10 min</span>
+      <strong>140 Kč</strong>
+    </div>
+  </div>
+</div>
+
+ <div class="modal-service">
+  <div class="modal-service-info">
+    <h4>Barvení obočí</h4>
+
+    <div class="modal-price-row">
+      <span>Samostatně · 15 min</span>
+      <strong>190 Kč</strong>
+    </div>
+
+    <div class="modal-price-row">
+      <span>Při kosmetickém ošetření · 10 min</span>
+      <strong>100 Kč</strong>
+    </div>
+  </div>
+</div>
+
+  <div class="modal-service">
+  <div class="modal-service-info">
+    <h4>Barvení řas</h4>
+
+    <div class="modal-price-row">
+      <span>Samostatně · 15 min</span>
+      <strong>190 Kč</strong>
+    </div>
+
+    <div class="modal-price-row">
+      <span>Při kosmetickém ošetření · 10 min</span>
+      <strong>140 Kč</strong>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- LASH LIFTING -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Lash lifting + Lash Botox s barvou</h4>
+      <span class="modal-duration">75 min</span>
+    </div>
+    <span class="modal-price">990 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Lash lifting + Lash Botox bez barvy</h4>
+      <span class="modal-duration">70 min</span>
+    </div>
+    <span class="modal-price">890 Kč</span>
+  </div>
+</div>
+
+<!-- LAMINACE OBOČÍ -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Laminace obočí s barvou</h4>
+      <span class="modal-duration">60 min</span>
+    </div>
+    <span class="modal-price">890 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Laminace obočí bez barvy</h4>
+      <span class="modal-duration">55 min</span>
+    </div>
+    <span class="modal-price">790 Kč</span>
+  </div>
+</div>
+
+<!-- KOMBINOVANÁ OŠETŘENÍ -->
+<div class="modal-section">
+ 
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Lash lifting + Lash Botox a laminace obočí s barvou</h4>
+      <span class="modal-duration">85 min</span>
+    </div>
+    <span class="modal-price">1 700 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Lash lifting + Lash Botox a laminace obočí bez barvy</h4>
+      <span class="modal-duration">80 min</span>
+    </div>
+    <span class="modal-price">1 550 Kč</span>
+  </div>
+</div>
+
+
+      <a href="#kontakt" class="btn modal-btn">Objednat se</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MODAL – VIZÁŽISTIKA A LÍČENÍ -->
+<div class="modal-overlay" id="modal-liceni" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-liceni-title">
+
+    <button class="modal-close" type="button" aria-label="Zavřít okno">×</button>
+
+    <div class="modal-content">
+      <h2 id="modal-liceni-title">Vizážistika a líčení</h2>
+      <div class="modal-title-line"></div>
+
+      
+<!-- LÍČENÍ -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Denní líčení po kosmetickém ošetření</h4>
+      <span class="modal-duration">15–30 min</span>
+    </div>
+    <span class="modal-price">400 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Denní líčení</h4>
+      <span class="modal-duration">30 min</span>
+    </div>
+    <span class="modal-price">700 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Večerní / slavnostní líčení</h4>
+      <span class="modal-duration">45–60 min</span>
+    </div>
+    <span class="modal-price">1 000–1 800 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Svatební líčení – nevěsta</h4>
+      <span class="modal-duration">45–60 min</span>
+    </div>
+    <span class="modal-price">1 500–1 800 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Svatební líčení – svatebčanka</h4>
+      <span class="modal-duration">45–60 min</span>
+    </div>
+    <span class="modal-price">900–1 200 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Zkouška líčení</h4>
+    </div>
+    <span class="modal-price">70 % z ceny líčení</span>
+  </div>
+</div>
+
+
+<!-- SVATEBNÍ BALÍČEK -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Kompletní příprava nevěsty na svatební den</h4>
+      <p>
+        1× zkouška svatebního líčení<br>
+        1× kosmetické ošetření pleti a dekoltu<br>
+        1× úprava a barvení obočí<br>
+        1× depilace horního rtu<br>
+        1× svatební líčení v den D
+      </p>
+    </div>
+    <span class="modal-price">3 900 Kč</span>
+  </div>
+</div>
+
+
+<!-- BEAUTY DAY -->
+<div class="modal-section">
+  
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Den krásy jen pro Vás</h4>
+      <p>
+        1× kosmetické ošetření pleti a dekoltu<br>
+        1× úprava a barvení obočí<br>
+        1× depilace horního rtu<br>
+        1× slavnostní líčení
+      </p>
+    </div>
+    <span class="modal-price">2 300 Kč</span>
+  </div>
+</div>
+
+
+<!-- DALŠÍ SLUŽBY -->
+<div class="modal-section">
+ 
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Fotolíčení a jiné příležitosti</h4>
+      <p>Individuální nabídka podle Vašich požadavků.</p>
+    </div>
+    <span class="modal-price">Dle domluvy</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Mobilní služby do 30 km</h4>
+    </div>
+    <span class="modal-price">400 Kč</span>
+  </div>
+
+  <div class="modal-service">
+    <div class="modal-service-info">
+      <h4>Mobilní služby nad 30 km</h4>
+    </div>
+    <span class="modal-price">12 Kč/km</span>
+  </div>
+</div>
+
+      <a href="#kontakt" class="btn modal-btn">Objednat se</a>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+  });
+
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.modal-close').forEach(button => {
+  button.addEventListener('click', closeModal);
+});
+
+document.querySelectorAll('.modal-overlay').forEach(modal => {
+  modal.addEventListener('click', event => {
+    if (event.target === modal) closeModal();
+  });
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeModal();
+});
+
+document.querySelectorAll('.modal-btn').forEach(button => {
+  button.addEventListener('click', closeModal);
+});
+</script>
+
+</body>
+</html>
