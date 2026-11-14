@@ -12,7 +12,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 
   html {
-  scroll-padding-top: 95px;
+  scroll-padding-top: 75px;
 }
   
   body{margin:0;color:var(--ink);font-family:'DM Sans',Arial,sans-serif}a{text-decoration:none;color:inherit}
@@ -2292,6 +2292,12 @@ a.contact-place:hover p {
     animation: none;
   }
 }
+
+  @media (max-width: 760px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+}
   
 </style>
 </head>
@@ -2308,7 +2314,7 @@ a.contact-place:hover p {
   <a href="#poukazy">Poukazy</a>
   <a href="#kontakt">Kontakt</a>
 </nav>
-    <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-links" onclick="const n=document.getElementById('nav-links');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="nav-links" onclick="const n=document.getElementById('nav-links');const o=n.classList.toggle('open');document.body.classList.toggle('menu-open',o);this.setAttribute('aria-expanded',o)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <a href="#kontakt" class="btn nav-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 10h18"/></svg>Objednat se</a>
   </div>
   <svg class="header-wave" viewBox="0 0 1055 33" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0H1055V0H0V8C125 33 223 27 345 12C499 -7 719 0 1055 0Z"/></svg>
@@ -3432,6 +3438,16 @@ if ('IntersectionObserver' in window) {
   });
 
 }
+</script>
+
+  <script>
+document.querySelectorAll('#nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.remove('open');
+    document.body.classList.remove('menu-open');
+    document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+  });
+});
 </script>
 
 </body>
