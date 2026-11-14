@@ -1428,6 +1428,8 @@ a.contact-place:hover p {
   max-width: 100%;
   margin: 0 auto 25px;
   overflow: hidden;
+  border: 5px solid #ffffff;
+  border-radius: 15px;
 }
 
 .about-photo-mobile img {
@@ -2449,6 +2451,13 @@ a.contact-place:hover p {
     margin-left: 0;
   }
 
+}
+
+ /* MOBIL – SJEDNOCENÉ SPODNÍ MEZERY SEKCÍ */
+@media (max-width: 760px) {
+  main section:not(.hero):not(.benefits) {
+    padding-bottom: 60px;
+  }
 }
   
 </style>
