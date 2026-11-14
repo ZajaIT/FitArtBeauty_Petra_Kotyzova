@@ -2341,10 +2341,6 @@ a.contact-place:hover p {
   /* MOBIL – VYCENTROVÁNÍ KONTAKTŮ */
 @media (max-width: 760px) {
 
-  .contact-place .contact-icon {
-    display: none;
-  }
-
   .contact {
     text-align: center;
   }
@@ -2355,52 +2351,107 @@ a.contact-place:hover p {
     align-items: center;
   }
 
-  .contact-place,
-  .contact-detail,
-  .contact-hours-heading {
-    position: relative;
-    width: fit-content;
-    max-width: calc(100% - 50px);
-    margin-left: auto;
-    margin-right: auto;
+  /* ADRESY BEZ IKONEK */
+  .contact-place .contact-icon {
+    display: none;
+  }
+
+  .contact-place {
     justify-content: center;
     text-align: center;
-    gap: 0;
+    padding: 0;
+    width: 100%;
   }
 
-  .contact-place .contact-icon,
-  .contact-detail svg,
-  .contact-hours-heading svg {
+  /* TELEFON A EMAIL */
+  .contact-detail:nth-child(1),
+  .contact-detail:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 4px;
+    white-space: nowrap;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .contact-detail:nth-child(1)::before {
+    content: "Tel.:";
+    font-weight: 600;
+  }
+
+  .contact-detail:nth-child(2)::before {
+    content: "Email:";
+    font-weight: 600;
+  }
+
+  .contact-detail:nth-child(1) svg,
+  .contact-detail:nth-child(2) svg {
+    display: none;
+  }
+
+  /* INSTAGRAM A FACEBOOK */
+  .contact-detail:nth-child(3),
+  .contact-detail:nth-child(4) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: auto;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .contact-detail:nth-child(3) svg,
+  .contact-detail:nth-child(4) svg {
+    position: static;
+    display: block;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+
+  /* LINKA NAD INSTAGRAMEM */
+  .contact-detail:nth-child(3) {
+    position: relative;
+    margin-top: 15px;
+    padding-top: 22px;
+  }
+
+  .contact-detail:nth-child(3)::before {
+    content: "";
     position: absolute;
-    right: calc(100% + 10px);
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 1px;
+    background: #cda995;
   }
 
+  /* OTEVÍRACÍ DOBA */
   .contact-hours {
     width: 100%;
     padding-left: 0;
     text-align: center;
   }
 
+  .contact-hours-heading {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .contact-hours-heading svg {
+    position: static;
+  }
+
   .contact-hours p {
     margin-left: 0;
   }
 
-    .contact-btn {
+  .contact-btn {
     margin-left: 0;
-  }
-
-  /* Bez ikonek u telefonu a e-mailu */
-  .contact-detail:nth-child(1) svg,
-  .contact-detail:nth-child(2) svg {
-    display: none;
-  }
-
-  /* Jemná linka mezi e-mailem a Instagramem */
-  .contact-detail:nth-child(3) {
-    border-top: 1px solid #cda995;
-    padding-top: 18px;
-    margin-top: 8px;
   }
 
 }
