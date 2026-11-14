@@ -2341,6 +2341,10 @@ a.contact-place:hover p {
   /* MOBIL – VYCENTROVÁNÍ KONTAKTŮ */
 @media (max-width: 760px) {
 
+  .contact-place .contact-icon {
+    display: none;
+  }
+
   .contact {
     text-align: center;
   }
@@ -2382,8 +2386,21 @@ a.contact-place:hover p {
     margin-left: 0;
   }
 
-  .contact-btn {
+    .contact-btn {
     margin-left: 0;
+  }
+
+  /* Bez ikonek u telefonu a e-mailu */
+  .contact-detail:nth-child(1) svg,
+  .contact-detail:nth-child(2) svg {
+    display: none;
+  }
+
+  /* Jemná linka mezi e-mailem a Instagramem */
+  .contact-detail:nth-child(3) {
+    border-top: 1px solid #cda995;
+    padding-top: 18px;
+    margin-top: 8px;
   }
 
 }
