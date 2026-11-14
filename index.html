@@ -2338,7 +2338,7 @@ a.contact-place:hover p {
 
 }
 
-  /* MOBIL – CELÁ KONTAKTNÍ SEKCE NA STŘED */
+  /* MOBIL – VYCENTROVÁNÍ KONTAKTŮ */
 @media (max-width: 760px) {
 
   .contact {
@@ -2347,30 +2347,35 @@ a.contact-place:hover p {
 
   .contact-grid,
   .contact-places,
-  .contact-details,
-  .contact-hours {
+  .contact-details {
     align-items: center;
   }
 
-  .contact-place {
+  .contact-place,
+  .contact-detail,
+  .contact-hours-heading {
+    position: relative;
+    width: fit-content;
+    max-width: calc(100% - 50px);
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
     text-align: center;
-    padding: 0;
+    gap: 0;
   }
 
-  .contact-detail {
-    justify-content: center;
-    text-align: center;
+  .contact-place .contact-icon,
+  .contact-detail svg,
+  .contact-hours-heading svg {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 0;
   }
 
   .contact-hours {
     width: 100%;
     padding-left: 0;
     text-align: center;
-  }
-
-  .contact-hours-heading {
-    justify-content: center;
   }
 
   .contact-hours p {
