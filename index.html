@@ -2469,6 +2469,15 @@ a.contact-place:hover p {
     padding-bottom: 60px;
   }
 }
+
+  #beauty-form-message {
+  margin: 16px auto 0;
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 600;
+  text-align: center;
+}
   
 </style>
 </head>
@@ -2845,7 +2854,9 @@ a.contact-place:hover p {
       <h2 id="modal-formular-title">Napište mi</h2>
       <div class="modal-title-line"></div>
 
-      <form class="beauty-form" onsubmit="event.preventDefault()">
+      <form class="beauty-form"
+      action="https://formspree.io/f/xkjrjroo"
+      method="POST">
 
         <div class="beauty-form-grid">
 
@@ -2887,9 +2898,11 @@ a.contact-place:hover p {
           Termín potvrdíme po vzájemné domluvě.
         </p>
 
-        <button type="submit" class="btn beauty-form-submit" disabled>
-          Odeslat zprávu <span aria-hidden="true">⟶</span>
-        </button>
+        <button type="submit" class="btn beauty-form-submit">
+  Odeslat zprávu <span aria-hidden="true">⟶</span>
+</button>
+
+        <p id="beauty-form-message" role="status" aria-live="polite" style="display:none;"></p>
 
       </form>
 
@@ -3636,6 +3649,54 @@ document.querySelectorAll('#nav-links a').forEach(link => {
     window.scrollTo(0, 0);
   });
 </script>
+
+  
+
+<script>
+const beautyForm = document.querySelector('.beauty-form');
+const beautyMessage = document.getElementById('beauty-form-message');
+
+beautyForm.addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const button = beautyForm.querySelector('.beauty-form-submit');
+  const originalText = button.innerHTML;
+
+  button.disabled = true;
+  button.textContent = 'Odesílání...';
+  beautyMessage.style.display = 'none';
+
+  try {
+    const response = await fetch(beautyForm.action, {
+      method: 'POST',
+      body: new FormData(beautyForm),
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Odeslání se nezdařilo');
+    }
+
+    beautyForm.reset();
+
+    beautyMessage.textContent = 'Vaše zpráva byla úspěšně odeslaná.';
+    beautyMessage.style.color = '#52734d';
+    beautyMessage.style.display = 'block';
+
+  } catch (error) {
+    beautyMessage.textContent = 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu.';
+    beautyMessage.style.color = '#a33a32';
+    beautyMessage.style.display = 'block';
+  } finally {
+    button.disabled = false;
+    button.innerHTML = originalText;
+  }
+});
+</script>
+
+
   
 </body>
 </html>
