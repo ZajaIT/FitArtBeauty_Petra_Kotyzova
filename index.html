@@ -2590,7 +2590,17 @@ a.contact-place:hover p {
     font-size: 11px;
   }
 }
+/* PC – bez zalomení */
+.consent-mobile-break {
+  display: none;
+}
 
+/* MOBIL – zalomení souhlasu */
+@media (max-width: 760px) {
+  .consent-mobile-break {
+    display: inline;
+  }
+}
 
   
 </style>
@@ -2950,7 +2960,7 @@ a.contact-place:hover p {
 
   <div class="footer-legal">
     <h3>Právní informace</h3>
-    <a href="vop-gdpr.html">VOP a GDPR</a>
+    <a href="vop-gdpr.html" target="_blank" rel="noopener noreferrer">VOP a GDPR</a>
     <a href="souhlas-fotografie.html" target="_blank" rel="noopener noreferrer">Souhlas s pořízením a zveřejněním fotografií</a>
   </div>
 
@@ -3026,7 +3036,7 @@ a.contact-place:hover p {
 <label class="beauty-form-consent">
   <input type="checkbox" name="souhlas_vop_gdpr" value="Ano" required>
   <span>
-    Odesláním formuláře potvrzuji, že souhlasím s
+    Odesláním formuláře potvrzuji,<br class="consent-mobile-break"> že souhlasím s
     <a href="vop-gdpr.html" target="_blank" rel="noopener noreferrer">VOP a GDPR</a>
   </span>
 </label>
