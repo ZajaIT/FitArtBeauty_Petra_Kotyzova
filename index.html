@@ -115,6 +115,18 @@
   overflow: hidden;
 }
 
+  .hero-petra {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  height: 95%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero-content{position:relative;z-index:2;width:min(100%,1240px);height:100%;margin:0 auto;padding:41px 7.1% 23px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
 .eyebrow{font-size:15px;letter-spacing:3px;font-weight:500;margin:0 0 13px 0;white-space:nowrap}
 .hero h1{font:italic 400 clamp(44px,5.3vw,66px)/.99 'Playfair Display',Georgia,serif;letter-spacing:-2.1px;margin:0 0 30px;max-width:570px}
@@ -2492,6 +2504,9 @@ a.contact-place:hover p {
 </header>
 <main>
   <section class="hero" aria-labelledby="hero-title">
+
+    <img src="petra.webp" class="hero-petra" alt="Petra Voják Kotýzová">
+
     <div class="hero-content">
       <p class="eyebrow">KOSMETIKA&nbsp; · &nbsp;VIZÁŽISTIKA&nbsp; · &nbsp;PÉČE O PLEŤ</p>
       <h1 id="hero-title">Krása, péče<br>a chvíle jen pro Vás.</h1>
