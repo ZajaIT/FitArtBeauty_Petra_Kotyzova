@@ -2536,6 +2536,63 @@ a.contact-place:hover p {
 }
 
   
+/* PC – SOUHLAS V KONTAKTNÍM FORMULÁŘI */
+
+.beauty-form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 18px;
+  cursor: pointer;
+}
+
+.beauty-form-consent input {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin: 1px 0 0;
+  accent-color: #743a1c;
+  cursor: pointer;
+}
+
+.beauty-form-consent span {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #3c2118;
+}
+
+.beauty-form-consent a {
+  color: #8a4c2c;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.beauty-form-consent a:hover {
+  color: #4e2918;
+}
+
+/* TABLET – SOUHLAS */
+@media (min-width: 761px) and (max-width: 1050px) {
+  .beauty-form-consent span {
+    font-size: 12px;
+  }
+}
+
+/* MOBIL – SOUHLAS */
+@media (max-width: 760px) {
+  .beauty-form-consent {
+    gap: 9px;
+    margin-bottom: 16px;
+  }
+
+  .beauty-form-consent span {
+    font-size: 11px;
+  }
+}
+
+
+  
 </style>
 </head>
 <body>
@@ -2894,7 +2951,7 @@ a.contact-place:hover p {
   <div class="footer-legal">
     <h3>Právní informace</h3>
     <a href="vop-gdpr.html">VOP a GDPR</a>
-    <a href="souhlas-fotografie.html">Souhlas s pořízením a zveřejněním fotografií</a>
+    <a href="souhlas-fotografie.html" target="_blank" rel="noopener noreferrer">Souhlas s pořízením a zveřejněním fotografií</a>
   </div>
 
   <div class="footer-inner">
@@ -2964,6 +3021,15 @@ a.contact-place:hover p {
           Odesláním formuláře nevzniká závazná rezervace.
           Termín potvrdíme po vzájemné domluvě.
         </p>
+
+        
+<label class="beauty-form-consent">
+  <input type="checkbox" name="souhlas_vop_gdpr" value="Ano" required>
+  <span>
+    Odesláním formuláře potvrzuji, že souhlasím s
+    <a href="vop-gdpr.html" target="_blank" rel="noopener noreferrer">VOP a GDPR</a>
+  </span>
+</label>
 
         <button type="submit" class="btn beauty-form-submit">
   Odeslat zprávu <span aria-hidden="true">⟶</span>
