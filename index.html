@@ -4069,19 +4069,23 @@ function openModal(id) {
 }
 
 
+
 function closeModal() {
-  const openModals = [...document.querySelectorAll('.modal-overlay.active')];
+  const legalModal = document.querySelector('.legal-modal.active');
 
-  if (!openModals.length) return;
+  const modal = legalModal ||
+    [...document.querySelectorAll('.modal-overlay.active')].at(-1);
 
-  const topModal = openModals[openModals.length - 1];
+  if (!modal) return;
 
-  topModal.classList.remove('active');
-  topModal.setAttribute('aria-hidden', 'true');
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
 
   if (!document.querySelector('.modal-overlay.active')) {
     document.body.style.overflow = '';
   }
+}
+
 }
 
 /* OTEVÍRÁNÍ PRÁVNÍCH DOKUMENTŮ */
