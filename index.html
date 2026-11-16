@@ -4093,9 +4093,22 @@ document.querySelectorAll('[data-legal-modal]').forEach(link => {
 });
 
 
+
 document.querySelectorAll('.modal-close').forEach(button => {
-  button.addEventListener('click', closeModal);
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal-overlay');
+
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+
+    if (!document.querySelector('.modal-overlay.active')) {
+      document.body.style.overflow = '';
+    }
+  });
 });
+
 
 document.querySelectorAll('.modal-overlay').forEach(modal => {
   modal.addEventListener('click', event => {
