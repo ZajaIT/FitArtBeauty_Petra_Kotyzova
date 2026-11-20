@@ -409,7 +409,7 @@ gap: 12px;
 
 .cosmetics {
   background: #ffffff;
-  padding: 55px 6%;
+  padding: 25px 6%;
 }
 
 .cosmetics-inner {
@@ -453,6 +453,24 @@ gap: 12px;
   object-position: center bottom;
   border-radius: 18px;
 }
+  
+/* PC – ODDĚLOVACÍ LINKA POD KOSMETIKOU */
+
+.cosmetics::after {
+  content: "";
+  display: block;
+  width: 75%;
+  max-width: 950px;
+  height: 3px;
+  margin: 35px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #e8cfc1,
+    transparent
+  );
+}
+
 
 
 /* =====================================
