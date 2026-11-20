@@ -2952,7 +2952,9 @@ a.contact-place:hover p {
      alt="Podpis Petry Voják Kotýzové"
      class="about-signature">
 
-        <a href="#" class="about-education-link">
+        <a href="#modal-vzdelani"
+   class="about-education-link"
+   onclick="event.preventDefault(); openModal('modal-vzdelani')">
   Moje vzdělání a certifikace <span>→</span>
 </a>
 
@@ -4106,6 +4108,87 @@ Telefon: 723 523 167</p>
 
   </div>
 </div>
+
+  
+<!-- MODAL – MOJE VZDĚLÁNÍ A CERTIFIKACE -->
+<div class="modal-overlay" id="modal-vzdelani" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-vzdelani-title">
+
+    <button class="modal-close" type="button" aria-label="Zavřít okno">×</button>
+
+    <div class="modal-content education-content">
+      <h2 id="modal-vzdelani-title">Moje vzdělání a certifikace</h2>
+      <div class="modal-title-line"></div>
+
+      <img src="certifikaty.webp"
+           alt="Certifikáty a osvědčení Petry Kotýzové"
+           class="education-photo"
+           loading="lazy">
+
+      <h3>Získaná vzdělání</h3>
+  
+<div class="education-list">
+
+  <div class="education-item">
+    <span class="education-date">12/2020</span>
+    <p>Artistry Certifikát Vizážistka</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">10/2021</span>
+    <p>Zuzana Gavendová Osvědčení o získání profesní kvalifikace Kosmetička</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">10/2021</span>
+    <p>Artistry Certifikát Kosmetička</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">1/2022</span>
+    <p>Syncare Plus, s.r.o. certifikační seminář Aha peeling GlycoHYAL SynCare</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">6/2022</span>
+    <p>Evolution Beauty Institute Lash Lifting a Lash Botox</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">10/2023</span>
+    <p>Syncare Plus, s.r.o. odborné školení Neinvazivní ošetření proteinovými nitěmi s pomocí séra PeptiVia</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">10/2024</span>
+    <p>Syncare Plus, s.r.o. odborné školení Podpůrná péče při akné</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">11/2024</span>
+    <p>Syncare Plus, s.r.o. odborné školení Šetrné ovocné kyseliny, vyvinuté odborníky SynCare - AHA peelingy pro citlivou pleť</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">12/2024</span>
+    <p>Syncare Plus, s.r.o. odborné školení Hraniční stavy s kuperózou a prevence rosacey</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">2/2025</span>
+    <p>Zuzana Gavendová kurz Mikrojehličkování</p>
+  </div>
+
+  <div class="education-item">
+    <span class="education-date">4/2026</span>
+    <p>Clever Line s.r.o. Osvědčení o získání profesní kvalifikace Odborník na PMU/ Porušení integrity kůže</p>
+  </div>
+
+</div>
+      </div>
+  </div>
+</div>
+
 
 
 <script>
