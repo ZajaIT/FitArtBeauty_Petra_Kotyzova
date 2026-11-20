@@ -2828,7 +2828,10 @@ a.contact-place:hover p {
 }
 
 #modal-vzdelani .education-item {
-  padding: 12px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  padding: 8px 0;
   border-bottom: 1px solid #e8d9cf;
 }
 
@@ -2838,16 +2841,17 @@ a.contact-place:hover p {
 
 #modal-vzdelani .education-date {
   display: block;
-  margin-bottom: 4px;
+  flex: 0 0 65px;
+  margin: 0;
   color: #8a4c2c;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
 }
-
 #modal-vzdelani .education-item p {
+  flex: 1;
   margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 13px;
+  line-height: 1.4;
   color: #3c2118;
 }
 
