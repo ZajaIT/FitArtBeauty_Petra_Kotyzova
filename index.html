@@ -407,10 +407,27 @@ gap: 12px;
    PC – KOSMETIKA, SE KTEROU PRACUJI
 ===================================== */
 
+
 .cosmetics {
   background: #ffffff;
   padding: 25px 6%;
 }
+
+.cosmetics::before {
+  content: "";
+  display: block;
+  width: 75%;
+  max-width: 950px;
+  height: 3px;
+  margin: 0 auto 35px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #e8cfc1,
+    transparent
+  );
+}
+
 
 .cosmetics-inner {
   max-width: 1050px;
