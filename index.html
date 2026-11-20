@@ -489,6 +489,7 @@ gap: 12px;
 }
 
   
+
 /* =====================================
    TABLET – KOSMETIKA
 ===================================== */
@@ -500,8 +501,9 @@ gap: 12px;
   }
 
   .cosmetics-inner {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: center;
     gap: 30px;
     max-width: 720px;
   }
@@ -511,21 +513,25 @@ gap: 12px;
   }
 
   .cosmetics-content h2 {
-    font-size: 38px;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .cosmetics-content p {
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   .cosmetics-photo {
-    width: 260px;
-    max-width: 100%;
+    width: 220px;
   }
 
   .cosmetics-photo img {
     width: 100%;
-    height: 364px;
+    height: 308px;
   }
 
 }
-
   
 /* =====================================
    MOBIL – KOSMETIKA
