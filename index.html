@@ -3888,6 +3888,10 @@ kdykoliv změnit nebo odvolat prostřednictvím odkazu
 prohlížeče po dobu 180 dní. Toto uložení slouží
 výhradně k zapamatování nastavení cookies.</p>
 
+      <p>Analytické cookies _ga a _ga_7VN6GCDSTH
+slouží k rozlišení návštěvníků a uchování stavu
+návštěvy. Jejich doba platnosti je 180 dní.</p>
+
 <p>Podrobné údaje o uživatelích a událostech jsou
 v Google Analytics uchovávány po dobu 2 měsíců.
 Souhrnné statistické přehledy mohou být uchovávány déle.
@@ -5019,9 +5023,11 @@ beautyForm.addEventListener('submit', async function(event) {
     gtag('js', new Date());
 
     gtag('config', gaId, {
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false
-    });
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false,
+  cookie_expires: 15552000,
+  cookie_update: false
+});
 
     const script = document.createElement('script');
     script.async = true;
