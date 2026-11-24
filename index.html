@@ -3199,6 +3199,102 @@ a.contact-place:hover p {
     font-size: 12px;
   }
 }
+
+  /* =====================================
+   PC – COOKIE LIŠTA
+===================================== */
+
+#cookie-banner[hidden] {
+  display: none !important;
+}
+
+#cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 420px;
+  max-width: calc(100% - 40px);
+  max-height: 90dvh;
+  overflow-y: auto;
+  z-index: 3000;
+  background: #fffaf7;
+  color: var(--ink);
+  border: 1px solid #d8b9a7;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 5px 30px rgba(60,33,24,.18);
+}
+
+.cookie-content h3 {
+  font: normal 400 25px Georgia, serif;
+  margin: 0 0 12px;
+  color: var(--brown);
+}
+
+.cookie-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.cookie-buttons button {
+  flex: 1;
+  padding: 11px 15px;
+  border: 1px solid var(--brown);
+  border-radius: 50px;
+  background: var(--brown);
+  color: #fff;
+  font: 500 13px 'DM Sans', Arial, sans-serif;
+  cursor: pointer;
+  transition: background .3s ease;
+}
+
+.cookie-buttons button:hover {
+  background: #49230f;
+}
+
+/* =====================================
+   TABLET – COOKIE LIŠTA
+===================================== */
+
+@media (min-width: 761px) and (max-width: 1050px) {
+  #cookie-banner {
+    width: 380px;
+    padding: 22px;
+  }
+}
+
+/* =====================================
+   MOBIL – COOKIE LIŠTA
+===================================== */
+
+@media (max-width: 760px) {
+  #cookie-banner {
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    max-width: calc(100% - 24px);
+    padding: 20px;
+  }
+
+  .cookie-content h3 {
+    font-size: 22px;
+  }
+
+  .cookie-content p {
+    font-size: 12px;
+  }
+
+  .cookie-buttons {
+    gap: 10px;
+  }
+}
  
 </style>
 </head>
@@ -4827,7 +4923,147 @@ beautyForm.addEventListener('submit', async function(event) {
 });
 </script>
 
+<!-- COOKIE LIŠTA -->
+<div id="cookie-banner" hidden>
+  <div class="cookie-content">
+    <h3>Nastavení cookies</h3>
 
+    <p>
+      Tento web používá analytické cookies, které nám
+      pomáhají porozumět návštěvnosti a zlepšovat web.
+      Tyto cookies používáme pouze s vaším souhlasem.
+    </p>
+
+    <div class="cookie-buttons">
+      <button type="button" id="cookie-accept">
+        Přijmout
+      </button>
+
+      <button type="button" id="cookie-reject">
+        Odmítnout
+      </button>
+    </div>
+  </div>
+</div>
+
+  <script>
+/* COOKIE LIŠTA A GOOGLE ANALYTICS */
+
+(function () {
+  const gaId = 'G-7VN6GCDSTH';
+  const storageKey = 'analytics-consent';
+  const banner = document.getElementById('cookie-banner');
+
+  let analyticsLoaded = false;
+
+  window['ga-disable-' + gaId] = true;
+
+  function loadAnalytics() {
+    window['ga-disable-' + gaId] = false;
+
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+
+    gtag('js', new Date());
+
+    gtag('config', gaId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src =
+      'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+
+    document.head.appendChild(script);
+  }
+
+  function removeAnalyticsCookies() {
+    document.cookie.split(';').forEach(function (cookie) {
+      const name = cookie.split('=')[0].trim();
+
+      if (/^(_ga($|_)|_gid$|_gat($|_))/.test(name)) {
+        const expired =
+          name + '=; Max-Age=0; path=/';
+
+        document.cookie = expired;
+        document.cookie =
+          expired + '; domain=' + location.hostname;
+        document.cookie =
+          expired + '; domain=fitartbeautypetra.cz';
+      }
+    });
+  }
+
+  function saveConsent(value) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({
+        value: value,
+        date: Date.now()
+      }));
+    } catch (error) {}
+  }
+
+  let consent = null;
+
+  try {
+    consent = JSON.parse(localStorage.getItem(storageKey));
+  } catch (error) {}
+
+  const validity = 180 * 24 * 60 * 60 * 1000;
+
+  if (consent && Date.now() - consent.date < validity) {
+    if (consent.value === 'accepted') {
+      loadAnalytics();
+    } else {
+      removeAnalyticsCookies();
+    }
+  } else {
+    removeAnalyticsCookies();
+    banner.hidden = false;
+  }
+
+  document.getElementById('cookie-accept')
+    .addEventListener('click', function () {
+      saveConsent('accepted');
+      banner.hidden = true;
+      loadAnalytics();
+    });
+
+  document.getElementById('cookie-reject')
+    .addEventListener('click', function () {
+      saveConsent('rejected');
+
+      window['ga-disable-' + gaId] = true;
+
+      removeAnalyticsCookies();
+      banner.hidden = true;
+
+      if (analyticsLoaded) {
+        location.reload();
+      }
+    });
+
+  window.openCookieSettings = function () {
+    banner.hidden = false;
+  };
+
+})();
+</script>
   
 </body>
 </html>
