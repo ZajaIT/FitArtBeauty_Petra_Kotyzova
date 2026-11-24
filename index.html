@@ -3296,26 +3296,6 @@ a.contact-place:hover p {
   }
 }
 
-  /* FOOTER – NASTAVENÍ COOKIES */
-
-.footer-cookies {
-  text-align: center;
-  margin-top: 12px;
-  font-size: 11px;
-}
-
-.footer-cookies a {
-  color: #fff;
-  opacity: .85;
-  cursor: pointer;
-  transition: opacity .3s ease;
-}
-
-.footer-cookies a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
- 
 </style>
 </head>
 <body>
@@ -3704,14 +3684,9 @@ a.contact-place:hover p {
   <div class="footer-legal">
     <h3>Právní informace</h3>
     <a href="#modal-vop" data-legal-modal="modal-vop">VOP a GDPR</a>
-<a href="#modal-fotografie" data-legal-modal="modal-fotografie">Souhlas s pořízením a zveřejněním fotografií</a>
+    <a href="#modal-fotografie" data-legal-modal="modal-fotografie">Souhlas s pořízením a zveřejněním fotografií</a>
+    <a href="#cookie-banner" onclick="openCookieSettings(); return false;">Nastavení cookies</a>
   </div>
-
-  <div class="footer-cookies">
-  <a href="#cookie-banner" onclick="openCookieSettings(); return false;">
-    Nastavení cookies
-  </a>
-</div>
 
   <div class="footer-inner">
   <span>© 2026 Fit Art Beauty Petra</span>
